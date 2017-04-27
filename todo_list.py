@@ -11,14 +11,20 @@ You can run the script in your Terminal at any time using the command:
 
 def add_to_list(my_list):
     """Takes user input and adds it as a new item to the end of the list."""
-
-    print "The add_to_list function has not yet been written"
+    
+    user_input = raw_input("Please enter your task: ")
+    my_list.append(user_input)
+    return my_list
 
 
 def view_list(my_list):
     """Print each item in the list."""
 
-    print "The view_list function has not yet been written"
+    if my_list == []:
+        print "You haven't added an item."
+    else:
+        for items in my_list:
+            print items
 
 
 def display_main_menu(my_list):
@@ -32,8 +38,18 @@ def display_main_menu(my_list):
     >>> """
 
     while True:
-        # Collect input and include your if/elif/else statements here.
-        break
+        user_answer = raw_input(user_options)
+
+        if user_answer.upper() == "A":
+            add_to_list(my_list)
+
+        elif user_answer.upper() == "B":
+            view_list(my_list)
+        
+        elif user_answer.upper() == "C":
+            break
+        else:
+            print "Please choose one option!"
 
 #-------------------------------------------------
 
